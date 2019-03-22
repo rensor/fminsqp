@@ -295,7 +295,7 @@ classdef fminsqp < handle
         
         % Expand linear equality constraints to account for slag variables
         if ~isempty(this.Aeq)
-          Ameq = zeros(size(this.Aeq,1),size(this.Aeq)+this.nGnl);
+          Ameq = zeros(size(this.Aeq,1),size(this.Aeq,2)+this.nGnl);
           Ameq(1:size(this.Aeq,1),1:size(this.Aeq,2)) = this.Aeq;
         else
           Ameq = [];
